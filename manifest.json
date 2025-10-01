@@ -1,0 +1,11 @@
+{
+    "display_name": "Context To Macro",
+    "loading_order": 9,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "nfuller286",
+    "version": "1.0.0",
+    "homePage": "https://github.com/nfuller286/st_context_to_macro"
+}

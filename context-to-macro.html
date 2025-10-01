@@ -1,0 +1,41 @@
+<!-- UI for the Context To Macro extension -->
+<div class="st-context-to-macro-settings">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <b>Context To Macro</b>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        <div class="inline-drawer-content">
+            <!-- Enable/Disable Toggle -->
+            <div class="ctm-block">
+                <label for="ctm_enabled_toggle">Enable Extension</label>
+                <input id="ctm_enabled_toggle" type="checkbox" />
+            </div>
+
+            <!-- Creation Mode -->
+            <div class="ctm-block">
+                <label>Creation Mode:</label>
+                <input type="radio" id="ctm_mode_macro" name="creation_mode" value="macro">
+                <label for="ctm_mode_macro">Macro</label>
+                <input type="radio" id="ctm_mode_variable" name="creation_mode" value="variable">
+                <label for="ctm_mode_variable">Variable</label>
+            </div>
+
+            <!-- Manual Refresh Button -->
+            <div class="ctm-block">
+                <input id="ctm_refresh_button" class="menu_button" type="submit" value="Refresh" />
+            </div>
+
+            <hr class="sysHR" />
+
+            <!-- Mappings will be dynamically added here -->
+            <div id="ctm_mapping_rows_container"></div>
+
+            <!-- Add New Mapping Button -->
+            <div class="ctm-block">
+                <input id="ctm_add_button" class="menu_button" type="submit" value="Add Mapping" />
+            </div>
+
+        </div>
+    </div>
+</div>
