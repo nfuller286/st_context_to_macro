@@ -3,6 +3,7 @@
 import { extension_settings, renderExtensionTemplateAsync, getContext } from "../../../extensions.js";
 import { saveSettingsDebounced } from "../../../../script.js";
 import { executeSlashCommands } from "../../../slash-commands.js";
+import { buildObjectSkeleton, getSuggestionsForPath } from "./context-autocomplete.js";
 
 const extensionName = "st_context_to_macro";
 
@@ -247,6 +248,17 @@ jQuery(async () => {
     $('input[name="creation_mode"]').on('change', onCreationModeChange);
     $("#ctm_add_button").on("click", onAddButtonClick);
     $("#ctm_refresh_button").on("click", () => refreshVariables(false));
+    $("#ctm_test_skeleton_button").on("click", () => {
+        const context = getContext();
+        const skeleton = buildObjectSkeleton(context);
+        console.log("Context Skeleton:", skeleton);
+
+        const testPath = 'chat';
+        const suggestions = getSuggestionsForPath(skeleton, testPath);
+        console.log(`Suggestions for path "${testPath}":`, suggestions);
+
+        toastr.info("Context skeleton and suggestions logged to developer console.");
+    });
 
     const container = $("#ctm_mapping_rows_container");
     container.on("input", ".ctm_context_path_input", onMappingInput);
